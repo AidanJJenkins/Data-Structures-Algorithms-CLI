@@ -1,6 +1,7 @@
 # dsa
 - This is a tool to practice data structures and algorithms in go.
 
+- Do not change anything in 'template'.
 - Run 'go run main.go gen' to generate a new directory with incomplete implementations of important data structures and algorithms.
 
 - Inside the new directroy are sub directories, each with their own topic and related test file.
