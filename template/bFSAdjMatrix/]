@@ -1,0 +1,47 @@
+package bfsadjmatrix
+
+func BFS(graph [][]int, source, needle int) ([]int, bool) {
+	queue := []int{source}
+	discovered := make([]int, len(graph))
+	discovered[source] = 1
+	foundPath := false
+
+	for len(queue) > 0 {
+		v := queue[0]
+		queue = queue[1:]
+
+		for i := 0; i < len(graph[v]); i++ {
+			if discovered[i] == 0 && graph[v][i] > 0 {
+				if i == needle {
+					foundPath = true
+					break
+				}
+				discovered[i] = discovered[v] + 1
+				queue = append(queue, i)
+			}
+		}
+
+		if foundPath {
+			break
+		}
+	}
+
+	if foundPath {
+		path := []int{needle}
+		curr := needle
+
+		for curr != source {
+			for i := 0; i < len(graph); i++ {
+				if graph[curr][i] > 0 && discovered[i] == discovered[curr]-1 {
+					path = append([]int{i}, path...)
+					curr = i
+					break
+				}
+			}
+		}
+
+		return path, true
+	}
+
+	return nil, false
+}
