@@ -1,6 +1,7 @@
 package singlylinkedlist
 
 import (
+	"fmt"
 	"testing"
 )
 
@@ -68,4 +69,16 @@ func TestList(t *testing.T) {
 	if val := list.Get(0); val != 7 {
 		t.Errorf("Expected 7 at index 0, but got %v", val)
 	}
+}
+
+func (ll *LinkedList) PrintList() {
+	toPrint := ll.head
+
+	for toPrint != nil {
+		fmt.Printf("%d,", toPrint.value.(int))
+		toPrint = toPrint.next
+	}
+
+	fmt.Printf("\n")
+	fmt.Printf("Length: %d\n", ll.length)
 }

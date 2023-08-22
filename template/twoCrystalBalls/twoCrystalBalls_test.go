@@ -6,20 +6,18 @@ import (
 )
 
 func TestTwoCrystalBalls(t *testing.T) {
-	index := rand.Intn(10000)
+	idx := rand.Intn(10000)
 	data := make([]bool, 10000)
-	for i := 0; i < 10000; i++ {
+
+	for i := idx; i < 10000; i++ {
 		data[i] = true
 	}
 
-	result := twoCrystalBalls(data)
-	if result != index {
-		t.Errorf("Expected result: %d, got: %d", index, result)
+	if result := twoCrystalBalls(data); result != idx {
+		t.Errorf("Expected %d, but got %d", idx, result)
 	}
 
-	// Test with an array of 821 elements filled with false
-	result = twoCrystalBalls(make([]bool, 821))
-	if result != -1 {
-		t.Errorf("Expected result: -1, got: %d", result)
+	if result := twoCrystalBalls(make([]bool, 821)); result != -1 {
+		t.Errorf("Expected -1, but got %d", result)
 	}
 }
