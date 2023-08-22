@@ -1,6 +1,6 @@
 # Data Structures & Algorithms CLI
 
-- This is a work in progress (broken), as of August 21, 2023.
+- This is a work in progress, as of August 22, 2023.
 - Some of the current tests will also be updated and/or changed.
   
 - Do not change anything in 'template'.
