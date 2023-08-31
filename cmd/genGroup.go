@@ -10,28 +10,25 @@ import (
 )
 
 func makeDir(cmd string) {
-	var groupDirectories = map[string][]string{
-		"g1": {"./template/linearSearchList", "./template/binarySearchList", "./template/twoCrystalBalls", "./template/singlyLinkedList", "./template/stack", "./template/queue"},
-	}
-	if groupDirectories[cmd] == nil {
-		fmt.Println("group does not exist, possible groups are: g1, g2, g3, and g4")
-	}
-
 	today := time.Now().Format("01-02-06")
 	newDirPath := filepath.Join(".", fmt.Sprintf("%s-%s", cmd, today))
+
+	d := make(map[string]string)
+	d["g1"] = "./template/g1"
+	d["g2"] = "./template/g2"
+	d["g3"] = "./template/g3"
+	d["g4"] = "./template/g4"
 
 	err := os.Mkdir(newDirPath, 0755)
 	if err != nil {
 		fmt.Printf("Error creating directory: %s\n", err)
 		return
 	}
-
-	for _, dir := range groupDirectories[cmd] {
-		err = copyFiles(dir, newDirPath)
-		if err != nil {
-			fmt.Printf("Error copying files: %s\n", err)
-			return
-		}
+	groupPath := d[cmd]
+	err = copyFiles(groupPath, newDirPath)
+	if err != nil {
+		fmt.Printf("Error copying files: %s\n", err)
+		return
 	}
 
 	fmt.Printf("Day %s practice problems generated in: %s\n", today, newDirPath)

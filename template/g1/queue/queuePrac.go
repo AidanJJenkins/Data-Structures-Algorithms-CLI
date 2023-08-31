@@ -1,7 +1,9 @@
 package queue
 
+type val any
+
 type Node struct {
-	value any
+	value val
 	next  *Node
 }
 
@@ -11,7 +13,7 @@ type Queue struct {
 	tail   *Node
 }
 
-func (q *Queue) Enqueue(item any) {
+func (q *Queue) Enqueue(item val) {
 }
 
 func (q *Queue) Dequeue() any {
