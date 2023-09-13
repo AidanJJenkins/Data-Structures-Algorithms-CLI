@@ -1,7 +1,7 @@
 package doublylinkedlist
 
 type Node struct {
-	value int
+	value any
 	next  *Node
 	prev  *Node
 }
@@ -13,40 +13,30 @@ type DoublyLinkedList struct {
 }
 
 func newNode(value int) *Node {
-	return &Node{
-		value: value,
-		next:  nil,
-		prev:  nil,
-	}
 }
 
 func newDoublyList() *DoublyLinkedList {
-	return &DoublyLinkedList{
-		Length: 0,
-		head:   nil,
-		tail:   nil,
-	}
 }
 
-func (ll *DoublyLinkedList) Prepend(item int) {
-}
-
-func (ll *DoublyLinkedList) InsertAt(item int, idx int) {
+func (ll *DoublyLinkedList) Prepend(item any) {
 }
 
 func (ll *DoublyLinkedList) Append(item int) {
 }
 
-func (ll *DoublyLinkedList) Remove(item int) int {
+func (ll *DoublyLinkedList) InsertAt(item any, idx int) {
 }
 
-func (ll *DoublyLinkedList) removeNode(node *Node) int {
+func (ll *DoublyLinkedList) Remove(item any) any {
 }
 
-func (ll *DoublyLinkedList) Get(idx int) int {
+func (ll *DoublyLinkedList) removeNode(node *Node) any {
 }
 
-func (ll *DoublyLinkedList) RemoveAt(idx int) int {
+func (ll *DoublyLinkedList) Get(idx int) any {
+}
+
+func (ll *DoublyLinkedList) RemoveAt(idx int) any {
 }
 
 func (ll *DoublyLinkedList) getAt(idx int) *Node {

@@ -82,3 +82,26 @@ func (ll *LinkedList) PrintList() {
 	fmt.Printf("\n")
 	fmt.Printf("Length: %d\n", ll.length)
 }
+
+func EdgeTest(t *testing.T) {
+	list := newSinglyList()
+
+	list.Append(5)
+	if val := list.Remove(5); val != 5 {
+		t.Errorf("Expected 5, but got %v", val)
+	}
+
+	if val := list.Get(4); val != nil {
+		t.Errorf("Expected nil at index 4, but got %v", val)
+	}
+
+	list.Prepend(6)
+	list.Prepend(10)
+
+	if val := list.RemoveAt(4); val != nil {
+		t.Errorf("Expected nil at index 4, but got %v", val)
+	}
+	if val := list.RemoveAt(0); val != 6 {
+		t.Errorf("Expected nil at index 4, but got %v", val)
+	}
+}

@@ -29,7 +29,11 @@ func TestDoublyLinkedList(t *testing.T) {
 		t.Errorf("Expected 9 to be removed, but got %v", val)
 	}
 
-	if val := list.Remove(9); val != -1 {
+	// if val := list.Remove(9); val != -1 {
+	// 	t.Errorf("Expected nil as value when removing non-existing element, but got %v", val)
+	// }
+
+	if val := list.Remove(9); val != nil {
 		t.Errorf("Expected nil as value when removing non-existing element, but got %v", val)
 	}
 
