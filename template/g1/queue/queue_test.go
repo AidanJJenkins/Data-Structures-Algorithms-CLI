@@ -3,7 +3,7 @@ package queue
 import "testing"
 
 func TestQueue(t *testing.T) {
-	list := Queue{0, nil, nil}
+	list := Queue[int]{0, nil, nil}
 
 	list.Enqueue(5)
 	list.Enqueue(7)

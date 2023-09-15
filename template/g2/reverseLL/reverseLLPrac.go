@@ -1,30 +1,26 @@
 package reversell
 
-type value any
-
-type Node struct {
-	value value
-	next  *Node
+type Node[T comparable] struct {
+	value T
+	next  *Node[T]
 }
 
-type LinkedList struct {
-	length int
-	head   *Node
-	tail   *Node
+type LinkedList[T comparable] struct {
+	length     int
+	head, tail *Node[T]
 }
 
-func newNode(value value) *Node {
-	return &Node{value, nil}
+func newNode[T comparable](value T) *Node[T] {
+	return &Node[T]{value, nil}
 }
 
-func newSinglyList() *LinkedList {
-	return &LinkedList{0, nil, nil}
+func newSinglyList[T comparable]() *LinkedList[T] {
+	return &LinkedList[T]{0, nil, nil}
 }
 
-func (ll *LinkedList) Reverse() {
+func (ll *LinkedList[T]) Reverse() {
 
 }
 
-func Rec(head *Node) *Node {
-
+func Rec[T comparable](head *Node[T]) *Node[T] {
 }

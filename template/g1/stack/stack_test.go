@@ -5,7 +5,7 @@ import (
 )
 
 func TestStack(t *testing.T) {
-	list := NewStack()
+	list := NewStack[int]()
 
 	list.Push(5)
 	list.Push(7)

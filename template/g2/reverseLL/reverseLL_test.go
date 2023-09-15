@@ -6,7 +6,7 @@ import (
 )
 
 func TestReverse(t *testing.T) {
-	list := newSinglyList()
+	list := newSinglyList[int]()
 	list.Append(1)
 	list.Append(9)
 	list.Append(6)
@@ -22,7 +22,7 @@ func TestReverse(t *testing.T) {
 	}
 }
 
-func printList(head *Node) []any {
+func printList(head *Node[int]) []any {
 	var r []any
 
 	curr := head
@@ -34,7 +34,7 @@ func printList(head *Node) []any {
 }
 
 func TestRec(t *testing.T) {
-	list := newSinglyList()
+	list := newSinglyList[int]()
 	list.Append(1)
 	list.Append(9)
 	list.Append(6)
@@ -51,7 +51,7 @@ func TestRec(t *testing.T) {
 
 }
 
-func (ll *LinkedList) Append(item value) {
+func (ll *LinkedList[T]) Append(item T) {
 	n := newNode(item)
 	ll.length++
 

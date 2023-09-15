@@ -5,7 +5,7 @@ import (
 )
 
 func TestDoublyLinkedList(t *testing.T) {
-	list := newDoublyList()
+	list := newDoublyList[int]()
 
 	list.Append(5)
 	list.Append(7)

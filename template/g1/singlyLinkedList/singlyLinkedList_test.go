@@ -6,7 +6,7 @@ import (
 )
 
 func TestList(t *testing.T) {
-	list := newSinglyList()
+	list := newSinglyList[int]()
 
 	list.Append(5)
 	list.Append(7)
@@ -71,11 +71,11 @@ func TestList(t *testing.T) {
 	}
 }
 
-func (ll *LinkedList) PrintList() {
+func (ll *LinkedList[T]) PrintList() {
 	toPrint := ll.head
 
 	for toPrint != nil {
-		fmt.Printf("%d,", toPrint.value.(int))
+		fmt.Printf("%v,", toPrint.value)
 		toPrint = toPrint.next
 	}
 
@@ -84,7 +84,7 @@ func (ll *LinkedList) PrintList() {
 }
 
 func EdgeTest(t *testing.T) {
-	list := newSinglyList()
+	list := newSinglyList[int]()
 
 	list.Append(5)
 	if val := list.Remove(5); val != 5 {
