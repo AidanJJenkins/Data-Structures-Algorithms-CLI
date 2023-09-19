@@ -10,6 +10,9 @@ type Queue[T comparable] struct {
 	head, tail *Node[T]
 }
 
+func NewQueue[T comparable]() *Queue[T] {
+}
+
 func (q *Queue[T]) Enqueue(item T) {
 
 }

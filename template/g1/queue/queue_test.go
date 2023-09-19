@@ -45,3 +45,47 @@ func TestQueue(t *testing.T) {
 		t.Errorf("Expected length 1, but got %v", list.length)
 	}
 }
+
+func TestEnqueue(t *testing.T) {
+	list := Queue[int]{0, nil, nil}
+
+	list.Enqueue(1)
+	if list.length != 1 {
+		t.Errorf("Expected length to be 1, got %d", list.length)
+	}
+	if list.head.value != 1 {
+		t.Errorf("Expected head value to be 1, got %d", list.head.value)
+	}
+}
+
+func TestQueueDequeue(t *testing.T) {
+	q := Queue[int]{0, nil, nil}
+	q.Enqueue(1)
+	q.Enqueue(2)
+	q.Enqueue(3)
+
+	out := q.Dequeue()
+	if out != 1 {
+		t.Errorf("Expected Dequeue() to return 1, got %d", out)
+	}
+	if q.length != 2 {
+		t.Errorf("Expected length to be 2 after Dequeue, got %d", q.length)
+	}
+
+	out = q.Dequeue()
+	if out != 2 {
+		t.Errorf("Expected Dequeue() to return 2, got %d", out)
+	}
+	if q.length != 1 {
+		t.Errorf("Expected length to be 1 after Dequeue, got %d", q.length)
+	}
+
+	newQ := NewQueue[int]()
+	out = newQ.Dequeue()
+	if out != nil {
+		t.Errorf("Expected Dequeue() on an empty queue to return nil, got %d", out)
+	}
+	if newQ.length != 0 {
+		t.Errorf("Expected length of an empty queue to be 0, got %d", q.length)
+	}
+}

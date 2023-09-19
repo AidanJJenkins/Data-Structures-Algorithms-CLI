@@ -105,3 +105,82 @@ func EdgeTest(t *testing.T) {
 		t.Errorf("Expected nil at index 4, but got %v", val)
 	}
 }
+
+func TestLinkedListPrepend(t *testing.T) {
+	ll := newSinglyList[int]()
+	ll.Prepend(1)
+	if ll.length != 1 {
+		t.Errorf("Expected length to be 1, got %d", ll.length)
+	}
+	if ll.head.value != 1 {
+		t.Errorf("Expected head value to be 1, got %d", ll.head.value)
+	}
+	t.Logf("TestLinkedListPrepend passed")
+}
+
+func TestLinkedListAppend(t *testing.T) {
+	ll := newSinglyList[int]()
+	ll.Append(1)
+	if ll.length != 1 {
+		t.Errorf("Expected length to be 1, got %d", ll.length)
+	}
+	if ll.tail.value != 1 {
+		t.Errorf("Expected tail value to be 1, got %d", ll.tail.value)
+	}
+}
+
+func TestLinkedListRemove(t *testing.T) {
+	ll := newSinglyList[int]()
+	ll.Append(1)
+	ll.Append(2)
+	ll.Append(3)
+
+	out := ll.Remove(2)
+	if out != 2 {
+		t.Errorf("Expected Remove(2) to return 2, got %d", out)
+	}
+	if ll.length != 2 {
+		t.Errorf("Expected length to be 2 after removing, got %d", ll.length)
+	}
+}
+
+func TestLinkedListGet(t *testing.T) {
+	ll := newSinglyList[int]()
+	ll.Append(1)
+	ll.Append(2)
+	ll.Append(3)
+
+	val := ll.Get(1)
+	if val != 2 {
+		t.Errorf("Expected Get(1) to return 2, got %d", val)
+	}
+}
+
+func TestLinkedListInsertAt(t *testing.T) {
+	ll := newSinglyList[int]()
+	ll.Append(1)
+	ll.Append(3)
+
+	ll.InsertAt(2, 1)
+	if ll.length != 3 {
+		t.Errorf("Expected length to be 3 after InsertAt, got %d", ll.length)
+	}
+	if ll.Get(1) != 2 {
+		t.Errorf("Expected Get(1) to return 2 after InsertAt, got %d", ll.Get(1))
+	}
+}
+
+func TestLinkedListRemoveAt(t *testing.T) {
+	ll := newSinglyList[int]()
+	ll.Append(1)
+	ll.Append(2)
+	ll.Append(3)
+
+	out := ll.RemoveAt(1)
+	if out != 2 {
+		t.Errorf("Expected RemoveAt(1) to return 2, got %d", out)
+	}
+	if ll.length != 2 {
+		t.Errorf("Expected length to be 2 after RemoveAt, got %d", ll.length)
+	}
+}
