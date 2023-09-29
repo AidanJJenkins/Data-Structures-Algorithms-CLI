@@ -1,8 +1,5 @@
 # Data Structures & Algorithms CLI
 
-- This is a work in progress, as of September 14, 2023.
-- Some of the current tests will be updated and/or changed.
-  
 - Do not change anything in 'template'.
 - Run 'go run main.go gen' to generate a new directory with incomplete implementations of important data structures and algorithms.
 - Run 'go run main.go group -g <g_> to generate just one of the groups, the options for groups are g1, g2, g3, and g4.
