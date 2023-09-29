@@ -1,3 +1,3 @@
 package quicksort
 
-// test needs: qs, partition, quicksort
+// test needs: qs, partition, quickSort
