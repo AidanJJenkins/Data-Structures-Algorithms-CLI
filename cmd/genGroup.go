@@ -18,6 +18,9 @@ func makeDir(cmd string) {
 	d["g2"] = "./template/g2"
 	d["g3"] = "./template/g3"
 	d["g4"] = "./template/g4"
+	d["g1h"] = "./template/g1h"
+	d["g2h"] = "./template/g2h"
+	d["g3h"] = "./template/g3h"
 
 	err := os.Mkdir(newDirPath, 0755)
 	if err != nil {
