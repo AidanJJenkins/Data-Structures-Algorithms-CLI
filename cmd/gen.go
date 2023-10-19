@@ -39,31 +39,42 @@ func copyFiles(templatePath, newPath string) error {
 	})
 }
 
+var singleGroup string
+var hardGroup string
+
 var genCmd = &cobra.Command{
 	Use:   "gen",
 	Short: "Generate a new day directory for practice problems",
 	Run: func(cmd *cobra.Command, args []string) {
-		templateDir := "./template"
+		if singleGroup != "" {
+			makeDir(singleGroup)
+		} else if hardGroup != "" {
+			makeDirHard(hardGroup)
+		} else {
+			templateDir := "./template/easy"
 
-		today := time.Now().Format("01-02-06")
-		newDirPath := filepath.Join(".", "all-"+today)
+			today := time.Now().Format("01-02-06")
+			newDirPath := filepath.Join(".", "all-"+today)
 
-		err := os.Mkdir(newDirPath, 0755)
-		if err != nil {
-			fmt.Printf("Error creating directory: %s\n", err)
-			return
+			err := os.Mkdir(newDirPath, 0755)
+			if err != nil {
+				fmt.Printf("Error creating directory: %s\n", err)
+				return
+			}
+
+			err = copyFiles(templateDir, newDirPath)
+			if err != nil {
+				fmt.Printf("Error copying files: %s\n", err)
+				return
+			}
+
+			fmt.Printf("Day %s practice problems generated in: %s\n", today, newDirPath)
 		}
-
-		err = copyFiles(templateDir, newDirPath)
-		if err != nil {
-			fmt.Printf("Error copying files: %s\n", err)
-			return
-		}
-
-		fmt.Printf("Day %s practice problems generated in: %s\n", today, newDirPath)
 	},
 }
 
 func init() {
 	rootCmd.AddCommand(genCmd)
+	genCmd.Flags().StringVarP(&singleGroup, "group", "g", "", "a single group of problems to be generated")
+	genCmd.Flags().StringVarP(&hardGroup, "hard", "d", "", "a single group of problems to be generated")
 }
