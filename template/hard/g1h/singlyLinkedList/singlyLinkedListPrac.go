@@ -1,3 +1,3 @@
 package singlylinkedlist
 
-// test needs: Node, LinkedList, newNode, newSinglyList, Prepend, Append, Remove, Get, InsertAt, RemoveAt
+// test needs: Node, LinkedList, NewNode, NewSinglyList, Prepend, Append, Remove, Get, InsertAt, RemoveAt

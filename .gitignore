@@ -1,7 +1,10 @@
 day-*
-answers/
+/all-*
+all/
 prac
 .DS_Store
 LICENSE
 /group*
+/answers*
+template/basics
 /hard-group*

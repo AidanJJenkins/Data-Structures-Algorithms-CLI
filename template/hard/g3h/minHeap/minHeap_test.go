@@ -13,8 +13,8 @@ func TestMinHeap(t *testing.T) {
 
 	heap.Insert(5)
 	heap.Insert(3)
-	heap.Insert(69)
-	heap.Insert(420)
+	heap.Insert(70)
+	heap.Insert(500)
 	heap.Insert(4)
 	heap.Insert(1)
 	heap.Insert(8)
@@ -47,11 +47,11 @@ func TestMinHeap(t *testing.T) {
 	if heap.Delete() != 8 {
 		t.Errorf("Expected deleted value to be 8, but got %d", heap.Delete())
 	}
-	if heap.Delete() != 69 {
-		t.Errorf("Expected deleted value to be 69, but got %d", heap.Delete())
+	if heap.Delete() != 70 {
+		t.Errorf("Expected deleted value to be 70, but got %d", heap.Delete())
 	}
-	if heap.Delete() != 420 {
-		t.Errorf("Expected deleted value to be 420, but got %d", heap.Delete())
+	if heap.Delete() != 500 {
+		t.Errorf("Expected deleted value to be 500, but got %d", heap.Delete())
 	}
 
 	if heap.Length != 0 {

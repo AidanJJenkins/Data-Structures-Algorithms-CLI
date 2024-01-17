@@ -1,10 +1,10 @@
 package comparetrees
 
-type BinaryNode struct {
-	value int
-	left  *BinaryNode
-	right *BinaryNode
+type TreeNode struct {
+	Val   int
+	Left  *TreeNode
+	Right *TreeNode
 }
 
-func Compare(a *BinaryNode, b *BinaryNode) bool {
+func Compare(a *TreeNode, b *TreeNode) bool {
 }

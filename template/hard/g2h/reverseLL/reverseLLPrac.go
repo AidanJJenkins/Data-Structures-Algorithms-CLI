@@ -1,3 +1,3 @@
 package reversell
 
-// test needs: Node, LinkedList, newNode, newSinglyList, Reverse, Rec
+// test needs: Node, LinkedList, NewNode, NewSinglyList, Reverse, Rec

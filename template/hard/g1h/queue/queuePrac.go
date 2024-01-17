@@ -1,3 +1,3 @@
 package queue
 
-// test needs Node, Queue, NewQueue, Enqueue, Dequeue, and Peek
+// test needs QueueNode, Queue, NewQueue, Enqueue, Dequeue, and Peek

@@ -16,10 +16,25 @@ func makeDir(cmd string) {
 	d["2"] = "./template/easy/g2"
 	d["3"] = "./template/easy/g3"
 	d["4"] = "./template/easy/g4"
+	d["basics"] = "./template/basics"
 
 	easyCheck := fmt.Sprintf("./template/easy/g%s", cmd)
 
-	if _, err := os.Stat(easyCheck); os.IsNotExist(err) {
+	if cmd == "basics" {
+		err := os.Mkdir(newDirPath, 0755)
+		if err != nil {
+			fmt.Printf("Error creating directory: %s\n", err)
+			return
+		}
+		groupPath := d[cmd]
+		err = copyFiles(groupPath, newDirPath)
+		if err != nil {
+			fmt.Printf("Error copying files: %s\n", err)
+			return
+		}
+
+		fmt.Printf("practice problems for group: %s generated in: ./%s\n", cmd, newDirPath)
+	} else if _, err := os.Stat(easyCheck); os.IsNotExist(err) {
 		fmt.Printf("Directory %s does not exist\n", cmd)
 	} else {
 		err := os.Mkdir(newDirPath, 0755)

@@ -1,10 +1,10 @@
 package btbfs
 
-type BinaryNode struct {
-	value int
-	left  *BinaryNode
-	right *BinaryNode
+type TreeNode struct {
+	Val   int
+	Left  *TreeNode
+	Right *TreeNode
 }
 
-func BFS(head *BinaryNode, needle int) bool {
+func BFS(head *TreeNode, needle int) bool {
 }

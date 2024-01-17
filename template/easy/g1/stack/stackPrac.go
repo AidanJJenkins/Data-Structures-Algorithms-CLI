@@ -1,25 +1,25 @@
 package stack
 
-type Node[T comparable] struct {
-	value T
-	next  *Node[T]
+type StackNode struct {
+	Val  int
+	Next *StackNode
 }
 
-type Stack[T comparable] struct {
-	length int
-	head   *Node[T]
+type Stack struct {
+	Length int
+	Head   *StackNode
 }
 
-func NewStack[T comparable]() *Stack[T] {
+func NewStack() *Stack {
 }
 
-func (s *Stack[T]) Push(item T) {
+func (s *Stack) Push(value int) {
 
 }
 
-func (s *Stack[T]) Pop() any {
+func (s *Stack) Pop() any {
 
 }
-func (s *Stack[T]) Peek() any {
+func (s *Stack) Peek() any {
 
 }

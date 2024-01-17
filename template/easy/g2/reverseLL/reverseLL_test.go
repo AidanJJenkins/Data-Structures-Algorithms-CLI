@@ -6,7 +6,7 @@ import (
 )
 
 func TestReverse(t *testing.T) {
-	list := newSinglyList[int]()
+	list := NewSinglyList()
 	list.Append(1)
 	list.Append(9)
 	list.Append(6)
@@ -15,26 +15,26 @@ func TestReverse(t *testing.T) {
 	comp := []any{67, 6, 9, 1}
 
 	list.Reverse()
-	linear := printList(list.head)
+	linear := printList(list.Head)
 
 	if !reflect.DeepEqual(linear, comp) {
 		t.Errorf("lists do not match, reversed: %v, test list: %v", linear, comp)
 	}
 }
 
-func printList(head *Node[int]) []any {
+func printList(head *Node) []any {
 	var r []any
 
 	curr := head
 	for curr != nil {
-		r = append(r, curr.value)
-		curr = curr.next
+		r = append(r, curr.Val)
+		curr = curr.Next
 	}
 	return r
 }
 
 func TestRec(t *testing.T) {
-	list := newSinglyList[int]()
+	list := NewSinglyList()
 	list.Append(1)
 	list.Append(9)
 	list.Append(6)
@@ -42,8 +42,8 @@ func TestRec(t *testing.T) {
 
 	comp := []any{67, 6, 9, 1}
 
-	list.head = Rec(list.head)
-	printed := printList(list.head)
+	list.Head = Rec(list.Head)
+	printed := printList(list.Head)
 
 	if !reflect.DeepEqual(printed, comp) {
 		t.Errorf("lists do not match, reversed: %v, test list: %v", printed, comp)
@@ -51,16 +51,16 @@ func TestRec(t *testing.T) {
 
 }
 
-func (ll *LinkedList[T]) Append(item T) {
-	n := newNode(item)
-	ll.length++
+func (ll *LinkedList) Append(value int) {
+	n := NewNode(value)
+	ll.Length++
 
-	if ll.head == nil {
-		ll.head = n
-		ll.tail = n
+	if ll.Head == nil {
+		ll.Head = n
+		ll.Tail = n
 		return
 	}
 
-	ll.tail.next = n
-	ll.tail = n
+	ll.Tail.Next = n
+	ll.Tail = n
 }

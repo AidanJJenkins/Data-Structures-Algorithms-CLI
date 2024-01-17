@@ -1,3 +1,3 @@
 package stack
 
-// test needs: Node, Stack, NewStack, Push, Pop, Peek
+// test needs: StackNode, Stack, NewStack, Push, Pop, Peek

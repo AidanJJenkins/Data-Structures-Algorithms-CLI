@@ -1,25 +1,25 @@
 package queue
 
-type Node[T comparable] struct {
-	value T
-	next  *Node[T]
+type QueueNode struct {
+	Val  int
+	Next *QueueNode
 }
 
-type Queue[T comparable] struct {
-	length     int
-	head, tail *Node[T]
+type Queue struct {
+	Length     int
+	Head, Tail *QueueNode
 }
 
-func NewQueue[T comparable]() *Queue[T] {
+func NewQueue() *Queue {
 }
 
-func (q *Queue[T]) Enqueue(item T) {
-
-}
-
-func (q *Queue[T]) Dequeue() any {
+func (q *Queue) Enqueue(value int) {
 
 }
 
-func (q *Queue[T]) Peek() any {
+func (q *Queue) Dequeue() any {
+
+}
+
+func (q *Queue) Peek() any {
 }

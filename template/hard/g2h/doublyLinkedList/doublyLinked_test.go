@@ -5,7 +5,7 @@ import (
 )
 
 func TestDoublyLinkedList(t *testing.T) {
-	list := newDoublyList[int]()
+	list := NewDoublyList()
 
 	list.Append(5)
 	list.Append(7)
@@ -28,10 +28,6 @@ func TestDoublyLinkedList(t *testing.T) {
 	if val := list.RemoveAt(1); val != 9 {
 		t.Errorf("Expected 9 to be removed, but got %v", val)
 	}
-
-	// if val := list.Remove(9); val != -1 {
-	// 	t.Errorf("Expected nil as value when removing non-existing element, but got %v", val)
-	// }
 
 	if val := list.Remove(9); val != nil {
 		t.Errorf("Expected nil as value when removing non-existing element, but got %v", val)

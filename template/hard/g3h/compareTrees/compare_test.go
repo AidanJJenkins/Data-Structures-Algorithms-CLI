@@ -4,63 +4,63 @@ import (
 	"testing"
 )
 
-var tree *BinaryNode = &BinaryNode{
-	value: 20,
-	right: &BinaryNode{
-		value: 50,
-		right: &BinaryNode{
-			value: 100,
+var tree *TreeNode = &TreeNode{
+	Val: 20,
+	Right: &TreeNode{
+		Val: 50,
+		Right: &TreeNode{
+			Val: 100,
 		},
-		left: &BinaryNode{
-			value: 30,
-			right: &BinaryNode{
-				value: 45,
+		Left: &TreeNode{
+			Val: 30,
+			Right: &TreeNode{
+				Val: 45,
 			},
-			left: &BinaryNode{
-				value: 29,
+			Left: &TreeNode{
+				Val: 29,
 			},
 		},
 	},
-	left: &BinaryNode{
-		value: 10,
-		right: &BinaryNode{
-			value: 15,
+	Left: &TreeNode{
+		Val: 10,
+		Right: &TreeNode{
+			Val: 15,
 		},
-		left: &BinaryNode{
-			value: 5,
-			right: &BinaryNode{
-				value: 7,
+		Left: &TreeNode{
+			Val: 5,
+			Right: &TreeNode{
+				Val: 7,
 			},
 		},
 	},
 }
 
-var tree2 *BinaryNode = &BinaryNode{
-	value: 20,
-	right: &BinaryNode{
-		value: 50,
-		right: &BinaryNode{
-			value: 100,
+var tree2 *TreeNode = &TreeNode{
+	Val: 20,
+	Right: &TreeNode{
+		Val: 50,
+		Right: &TreeNode{
+			Val: 100,
 		},
-		left: &BinaryNode{
-			value: 30,
-			right: &BinaryNode{
-				value: 45,
+		Left: &TreeNode{
+			Val: 30,
+			Right: &TreeNode{
+				Val: 45,
 			},
-			left: &BinaryNode{
-				value: 29,
+			Left: &TreeNode{
+				Val: 29,
 			},
 		},
 	},
-	left: &BinaryNode{
-		value: 10,
-		right: &BinaryNode{
-			value: 15,
+	Left: &TreeNode{
+		Val: 10,
+		Right: &TreeNode{
+			Val: 15,
 		},
-		left: &BinaryNode{
-			value: 5,
-			right: &BinaryNode{
-				value: 45,
+		Left: &TreeNode{
+			Val: 5,
+			Right: &TreeNode{
+				Val: 45,
 			},
 		},
 	},

@@ -6,16 +6,16 @@ import (
 )
 
 func TestBinarySearch(t *testing.T) {
-	foo := []int{1, 3, 4, 69, 71, 81, 90, 99, 420, 1337, 69420}
+	foo := []int{1, 3, 4, 70, 71, 81, 90, 99, 420, 1337, 70000}
 	var tests = []struct {
 		haystack []int
 		needle   int
 		answer   bool
 	}{
-		{foo, 69, true},
+		{foo, 70, true},
 		{foo, 1336, false},
-		{foo, 69420, true},
-		{foo, 69421, false},
+		{foo, 70000, true},
+		{foo, 700009, false},
 		{foo, 1, true},
 		{foo, 0, false},
 	}

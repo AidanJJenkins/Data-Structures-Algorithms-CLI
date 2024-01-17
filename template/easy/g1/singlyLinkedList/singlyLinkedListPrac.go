@@ -1,41 +1,41 @@
 package singlylinkedlist
 
-type Node[T comparable] struct {
-	value T
-	next  *Node[T]
+type Node struct {
+	Val  int
+	Next *Node
 }
 
-type LinkedList[T comparable] struct {
-	length     int
-	head, tail *Node[T]
+type LinkedList struct {
+	Length     int
+	Head, Tail *Node
 }
 
-func newNode[T comparable](value T) *Node[T] {
+func NewNode(value int) *Node {
 }
 
-func newSinglyList[T comparable]() *LinkedList[T] {
+func NewSinglyList() *LinkedList {
 }
 
-func (ll *LinkedList[T]) Prepend(item T) {
-
-}
-
-func (ll *LinkedList[T]) Append(item T) {
+func (ll *LinkedList) Prepend(value int) {
 
 }
 
-func (ll *LinkedList[T]) Remove(item T) any {
+func (ll *LinkedList) Append(value int) {
 
 }
 
-func (ll *LinkedList[T]) Get(idx int) any {
+func (ll *LinkedList) Remove(value int) any {
 
 }
 
-func (ll *LinkedList[T]) InsertAt(item T, idx int) {
+func (ll *LinkedList) Get(idx int) any {
 
 }
 
-func (ll *LinkedList[T]) RemoveAt(idx int) any {
+func (ll *LinkedList) InsertAt(value int, idx int) {
+
+}
+
+func (ll *LinkedList) RemoveAt(idx int) any {
 
 }

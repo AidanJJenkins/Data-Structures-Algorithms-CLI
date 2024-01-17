@@ -6,7 +6,7 @@ import (
 )
 
 func TestList(t *testing.T) {
-	list := newSinglyList[int]()
+	list := NewSinglyList()
 
 	list.Append(5)
 	list.Append(7)
@@ -20,8 +20,8 @@ func TestList(t *testing.T) {
 		t.Errorf("Expected 7 to be removed, but got %v", val)
 	}
 
-	if len := list.length; len != 2 {
-		t.Errorf("Expected list length to be 2, but got %v", len)
+	if len := list.Length; len != 2 {
+		t.Errorf("Expected list Length to be 2, but got %v", len)
 	}
 
 	list.Append(11)
@@ -42,8 +42,8 @@ func TestList(t *testing.T) {
 		t.Errorf("Expected 11 to be removed, but got %v", val)
 	}
 
-	if len := list.length; len != 0 {
-		t.Errorf("Expected list length to be 0, but got %v", len)
+	if len := list.Length; len != 0 {
+		t.Errorf("Expected list Length to be 0, but got %v", len)
 	}
 
 	list.Prepend(5)
@@ -62,8 +62,8 @@ func TestList(t *testing.T) {
 		t.Errorf("Expected 9 to be removed, but got %v", val)
 	}
 
-	if len := list.length; len != 2 {
-		t.Errorf("Expected list length to be 2, but got %v", len)
+	if len := list.Length; len != 2 {
+		t.Errorf("Expected list Length to be 2, but got %v", len)
 	}
 
 	if val := list.Get(0); val != 7 {
@@ -71,20 +71,20 @@ func TestList(t *testing.T) {
 	}
 }
 
-func (ll *LinkedList[T]) PrintList() {
-	toPrint := ll.head
+func (ll *LinkedList) PrintList() {
+	toPrint := ll.Head
 
 	for toPrint != nil {
-		fmt.Printf("%v,", toPrint.value)
-		toPrint = toPrint.next
+		fmt.Printf("%v,", toPrint.Val)
+		toPrint = toPrint.Next
 	}
 
 	fmt.Printf("\n")
-	fmt.Printf("Length: %d\n", ll.length)
+	fmt.Printf("Length: %d\n", ll.Length)
 }
 
 func EdgeTest(t *testing.T) {
-	list := newSinglyList[int]()
+	list := NewSinglyList()
 
 	list.Append(5)
 	if val := list.Remove(5); val != 5 {
@@ -107,30 +107,33 @@ func EdgeTest(t *testing.T) {
 }
 
 func TestLinkedListPrepend(t *testing.T) {
-	ll := newSinglyList[int]()
+	ll := NewSinglyList()
+
 	ll.Prepend(1)
-	if ll.length != 1 {
-		t.Errorf("Expected length to be 1, got %d", ll.length)
+	if ll.Length != 1 {
+		t.Errorf("Expected Length to be 1, got %d", ll.Length)
 	}
-	if ll.head.value != 1 {
-		t.Errorf("Expected head value to be 1, got %d", ll.head.value)
+	if ll.Head.Val != 1 {
+		t.Errorf("Expected Head value to be 1, got %d", ll.Head.Val)
 	}
 	t.Logf("TestLinkedListPrepend passed")
 }
 
 func TestLinkedListAppend(t *testing.T) {
-	ll := newSinglyList[int]()
+	ll := NewSinglyList()
+
 	ll.Append(1)
-	if ll.length != 1 {
-		t.Errorf("Expected length to be 1, got %d", ll.length)
+	if ll.Length != 1 {
+		t.Errorf("Expected Length to be 1, got %d", ll.Length)
 	}
-	if ll.tail.value != 1 {
-		t.Errorf("Expected tail value to be 1, got %d", ll.tail.value)
+	if ll.Tail.Val != 1 {
+		t.Errorf("Expected Tail value to be 1, got %d", ll.Tail.Val)
 	}
 }
 
 func TestLinkedListRemove(t *testing.T) {
-	ll := newSinglyList[int]()
+	ll := NewSinglyList()
+
 	ll.Append(1)
 	ll.Append(2)
 	ll.Append(3)
@@ -139,13 +142,14 @@ func TestLinkedListRemove(t *testing.T) {
 	if out != 2 {
 		t.Errorf("Expected Remove(2) to return 2, got %d", out)
 	}
-	if ll.length != 2 {
-		t.Errorf("Expected length to be 2 after removing, got %d", ll.length)
+	if ll.Length != 2 {
+		t.Errorf("Expected Length to be 2 after removing, got %d", ll.Length)
 	}
 }
 
 func TestLinkedListGet(t *testing.T) {
-	ll := newSinglyList[int]()
+	ll := NewSinglyList()
+
 	ll.Append(1)
 	ll.Append(2)
 	ll.Append(3)
@@ -157,13 +161,14 @@ func TestLinkedListGet(t *testing.T) {
 }
 
 func TestLinkedListInsertAt(t *testing.T) {
-	ll := newSinglyList[int]()
+	ll := NewSinglyList()
+
 	ll.Append(1)
 	ll.Append(3)
 
 	ll.InsertAt(2, 1)
-	if ll.length != 3 {
-		t.Errorf("Expected length to be 3 after InsertAt, got %d", ll.length)
+	if ll.Length != 3 {
+		t.Errorf("Expected Length to be 3 after InsertAt, got %d", ll.Length)
 	}
 	if ll.Get(1) != 2 {
 		t.Errorf("Expected Get(1) to return 2 after InsertAt, got %d", ll.Get(1))
@@ -171,7 +176,8 @@ func TestLinkedListInsertAt(t *testing.T) {
 }
 
 func TestLinkedListRemoveAt(t *testing.T) {
-	ll := newSinglyList[int]()
+	ll := NewSinglyList()
+
 	ll.Append(1)
 	ll.Append(2)
 	ll.Append(3)
@@ -180,7 +186,7 @@ func TestLinkedListRemoveAt(t *testing.T) {
 	if out != 2 {
 		t.Errorf("Expected RemoveAt(1) to return 2, got %d", out)
 	}
-	if ll.length != 2 {
-		t.Errorf("Expected length to be 2 after RemoveAt, got %d", ll.length)
+	if ll.Length != 2 {
+		t.Errorf("Expected Length to be 2 after RemoveAt, got %d", ll.Length)
 	}
 }
