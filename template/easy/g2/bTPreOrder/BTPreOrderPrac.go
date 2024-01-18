@@ -1,9 +1,9 @@
 package btpreorder
 
 type BinaryNode struct {
-	value int
-	left  *BinaryNode
-	right *BinaryNode
+	Val   int
+	Left  *BinaryNode
+	Right *BinaryNode
 }
 
 func walk(curr *BinaryNode, path []int) []int {

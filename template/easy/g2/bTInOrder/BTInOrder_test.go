@@ -6,31 +6,31 @@ import (
 )
 
 var tree *BinaryNode = &BinaryNode{
-	value: 20,
-	right: &BinaryNode{
-		value: 50,
-		right: &BinaryNode{
-			value: 100,
+	Val: 20,
+	Right: &BinaryNode{
+		Val: 50,
+		Right: &BinaryNode{
+			Val: 100,
 		},
-		left: &BinaryNode{
-			value: 30,
-			right: &BinaryNode{
-				value: 45,
+		Left: &BinaryNode{
+			Val: 30,
+			Right: &BinaryNode{
+				Val: 45,
 			},
-			left: &BinaryNode{
-				value: 29,
+			Left: &BinaryNode{
+				Val: 29,
 			},
 		},
 	},
-	left: &BinaryNode{
-		value: 10,
-		right: &BinaryNode{
-			value: 15,
+	Left: &BinaryNode{
+		Val: 10,
+		Right: &BinaryNode{
+			Val: 15,
 		},
-		left: &BinaryNode{
-			value: 5,
-			right: &BinaryNode{
-				value: 7,
+		Left: &BinaryNode{
+			Val: 5,
+			Right: &BinaryNode{
+				Val: 7,
 			},
 		},
 	},

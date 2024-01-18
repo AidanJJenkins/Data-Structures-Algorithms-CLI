@@ -1,34 +1,34 @@
 package bst
 
-type BinaryNode struct {
-	value       int
-	right, left *BinaryNode
+type TreeNode struct {
+	Val         int
+	Right, Left *TreeNode
 }
 
 type BST struct {
-	root *BinaryNode
+	root *TreeNode
 }
 
-func newBNode(item int) *BinaryNode {
+func newBNode(value int) *TreeNode {
 }
 
-func find(node *BinaryNode, item int) bool {
+func find(node *TreeNode, value int) bool {
 }
 
-func (b *BST) Find(item int) bool {
+func (b *BST) Find(value int) bool {
 }
 
-func insert(node *BinaryNode, item int) {
+func insert(node *TreeNode, value int) {
 }
 
-func (b *BST) Insert(item int) {
+func (b *BST) Insert(value int) {
 }
 
-func deleteNode(node *BinaryNode, item int) *BinaryNode {
+func deleteNode(node *TreeNode, value int) *TreeNode {
 }
 
-func minValueNode(node *BinaryNode) *BinaryNode {
+func minValueNode(node *TreeNode) *TreeNode {
 }
 
-func (b *BST) Delete(item int) {
+func (b *BST) Delete(value int) {
 }

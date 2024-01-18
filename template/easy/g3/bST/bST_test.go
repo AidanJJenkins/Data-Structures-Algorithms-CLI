@@ -3,7 +3,6 @@ package bst
 import "testing"
 
 func TestBST(t *testing.T) {
-	// Use the "tree" variable from the main package
 	tree := &BST{nil}
 
 	tree.Insert(5)

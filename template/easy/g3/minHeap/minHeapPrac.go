@@ -1,13 +1,13 @@
 package minheap
 
 type MinHeap struct {
-	data   []int
+	Data   []int
 	Length int
 }
 
 func NewMinHeap() *MinHeap {
 	return &MinHeap{
-		data:   []int{},
+		Data:   []int{},
 		Length: 0,
 	}
 }
