@@ -1,3 +1,3 @@
 package bst
 
-// test needs: BinaryNode, BST, newBNode, find, Find, insert, Insert, deleteNode, minValueNode, Delete
+// test needs: TreeNode, BST, NewTreeNode, find, Find, insert, Insert, deleteNode, minValueNode, Delete

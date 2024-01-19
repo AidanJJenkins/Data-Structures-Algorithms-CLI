@@ -6,10 +6,10 @@ type TreeNode struct {
 }
 
 type BST struct {
-	root *TreeNode
+	Root *TreeNode
 }
 
-func newBNode(value int) *TreeNode {
+func NewTreeNode(value int) *TreeNode {
 }
 
 func find(node *TreeNode, value int) bool {
