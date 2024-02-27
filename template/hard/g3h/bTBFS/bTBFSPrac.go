@@ -1,3 +1,3 @@
 package btbfs
 
-// test needs: BinaryNode, BFS
+// test needs: TreeNode, BFS

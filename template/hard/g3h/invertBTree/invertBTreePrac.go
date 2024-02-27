@@ -1,3 +1,3 @@
 package invertbtree
 
-// test needs BinaryNode, Invert
+// test needs TreeNode, Invert
